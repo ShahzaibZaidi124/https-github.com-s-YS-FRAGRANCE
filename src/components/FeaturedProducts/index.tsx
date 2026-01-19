@@ -146,7 +146,8 @@ const FeaturedProducts = () => {
   return (
     <section id="collections" className="py-32 bg-background relative">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,170,110,0.03),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,170,110,0.08),transparent_70%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40" />
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -154,9 +155,12 @@ const FeaturedProducts = () => {
           <p className="text-gold font-body text-sm tracking-[0.4em] uppercase mb-4">
             Our Collection
           </p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-            YS FRAGRANCE
+          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl text-foreground mb-6 tracking-wider">
+            TZ COLLECTION
           </h2>
+          <p className="text-muted-foreground font-body text-lg md:text-xl max-w-2xl mx-auto mb-6">
+            Our signature perfume collection is available now. Feel fresh. Feel confident.
+          </p>
           <div className="w-20 h-px bg-gold/50 mx-auto mb-8" />
           
           {/* Category Tabs */}

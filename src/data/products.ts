@@ -1,4 +1,4 @@
-// Product data for YS FRAGRANCE Collection
+// Product data for TZ COLLECTION Collection
 // Based on the actual product images available
 
 export interface Product {

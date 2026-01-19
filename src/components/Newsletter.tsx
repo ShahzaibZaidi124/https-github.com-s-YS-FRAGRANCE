@@ -11,7 +11,7 @@ const Newsletter = () => {
     e.preventDefault();
     if (email) {
       toast({
-        title: "Welcome to YS FRAGRANCE",
+        title: "Welcome to TZ COLLECTION",
         description: "You've been added to our exclusive list.",
       });
       setEmail("");

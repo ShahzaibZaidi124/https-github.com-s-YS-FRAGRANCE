@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="mb-8">
             <h3 className="font-display text-2xl text-foreground mb-4">
-              <span className="text-gradient-gold">YS FRAGRANCE</span>
+              <span className="text-gradient-gold">TZ COLLECTION</span>
             </h3>
             <p className="text-muted-foreground font-body text-sm leading-relaxed mb-6 max-w-md mx-auto">
               Our signature perfume collection. Feel fresh. Feel confident.
@@ -53,7 +53,7 @@ const Footer = () => {
         <div className="border-t border-gold/20 mt-12 pt-8">
           <div className="text-center">
             <p className="text-muted-foreground font-body text-sm mb-2">
-              © 2024 YS FRAGRANCE. All rights reserved.
+              © 2026 TZ COLLECTION. All rights reserved.
             </p>
             <p className="text-muted-foreground font-body text-sm">
               made by shahzaib

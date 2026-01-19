@@ -17,13 +17,13 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Main Heading */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium text-foreground leading-tight mb-8 animate-fade-up">
-            <span className="text-gradient-gold">YS FRAGRANCE</span>
+          {/* Main Title */}
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#C8AA6E] mb-8 animate-fade-up tracking-wider">
+            TZ COLLECTION
           </h1>
-
+          
           {/* Description */}
-          <p className="text-muted-foreground font-body text-xl md:text-2xl max-w-2xl mx-auto mb-12 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <p className="text-muted-foreground font-body text-2xl md:text-3xl lg:text-4xl max-w-3xl mx-auto mb-12 animate-fade-up font-medium relative z-10">
             Our signature perfume collection is available now. Feel fresh. Feel confident.
           </p>
 

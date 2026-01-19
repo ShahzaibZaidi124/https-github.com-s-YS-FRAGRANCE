@@ -49,13 +49,13 @@ if (import.meta.env.DEV) {
 }
 
 const FeaturedProducts = () => {
-  const [selectedCategory, setSelectedCategory] = useState<"all" | "Z Silver" | "Z Gold">("all");
+  const [selectedCategory, setSelectedCategory] = useState<"all" | "Silver" | "Gold">("all");
 
   const getDisplayProducts = () => {
     switch (selectedCategory) {
-      case "Z Silver":
+      case "Silver":
         return silverImages;
-      case "Z Gold":
+      case "Gold":
         return goldImages;
       default:
         return allImages;
@@ -76,7 +76,7 @@ const FeaturedProducts = () => {
             Our Collection
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-            YS FRAGRANCE
+            TZ COLLECTION
           </h2>
           <div className="w-20 h-px bg-gold/50 mx-auto mb-8" />
           
@@ -84,13 +84,13 @@ const FeaturedProducts = () => {
           <Tabs value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as typeof selectedCategory)} className="w-full">
             <TabsList className="bg-background/50 border border-gold/20">
               <TabsTrigger value="all" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
-                All Products ({allImages.length})
+                TZ COLLECTION ({allImages.length})
               </TabsTrigger>
-              <TabsTrigger value="Z Silver" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
-                Z Silver ({silverImages.length})
+              <TabsTrigger value="Silver" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
+                Silver ({silverImages.length})
               </TabsTrigger>
-              <TabsTrigger value="Z Gold" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
-                Z Gold ({goldImages.length})
+              <TabsTrigger value="Gold" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
+                Gold ({goldImages.length})
               </TabsTrigger>
             </TabsList>
           </Tabs>
