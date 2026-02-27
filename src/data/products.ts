@@ -62,6 +62,12 @@ export const goldProducts: Product[] = [
     image: "/src/assets/products/romantic-coffee.jpeg",
     imageName: "romantic-coffee.jpeg",
   },
+  {
+    name: "Coffee Blast",
+    category: "Z Gold",
+    image: "/src/assets/products/coffee-blast.jpg",
+    imageName: "coffee-blast.jpg",
+  },
 ];
 
 // All products combined

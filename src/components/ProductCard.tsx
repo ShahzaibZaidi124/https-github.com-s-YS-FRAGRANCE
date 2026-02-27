@@ -23,12 +23,12 @@ const ProductCard = ({ name, category, image, delay, index }: ProductCardProps) 
         onClick={() => setIsOpen(true)}
       >
         <div className="relative overflow-hidden rounded-lg bg-card border border-gold/20 shadow-lg hover:shadow-gold/10 transition-all duration-300">
-          {/* Product Image */}
-          <div className="aspect-square overflow-hidden">
+          {/* Product Image (same size as video - full width, responsive) */}
+          <div className="w-full aspect-video overflow-hidden rounded-lg">
             <img
               src={image}
               alt={name}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              className="media-frame group-hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
           </div>
@@ -44,16 +44,33 @@ const ProductCard = ({ name, category, image, delay, index }: ProductCardProps) 
 
       {/* Product Details Modal */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-md mx-auto">
-          <div className="space-y-4">
-            <div className="aspect-square overflow-hidden rounded-lg">
+        <DialogContent className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Product Image (modal) */}
+            <div className="w-full aspect-video overflow-hidden rounded-lg">
               <img
                 src={image}
                 alt={`Product ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="media-frame"
               />
             </div>
-            <div className="text-center space-y-4">
+
+            {/* Product Video (modal) */}
+            <div className="w-full aspect-video overflow-hidden rounded-lg bg-muted">
+              <video
+                  className="media-frame-video"
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                >
+                <source src="/src/assets/products/perfume video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          
+          <div className="text-center space-y-4">
               {/* WhatsApp Contact */}
               <div className="flex items-center justify-center gap-3 p-3 rounded-lg bg-gradient-to-r from-gold/10 to-gold/5 border border-gold/20">
                 <div className="relative">
@@ -80,7 +97,6 @@ const ProductCard = ({ name, category, image, delay, index }: ProductCardProps) 
                 </div>
               </div>
             </div>
-          </div>
         </DialogContent>
       </Dialog>
     </>

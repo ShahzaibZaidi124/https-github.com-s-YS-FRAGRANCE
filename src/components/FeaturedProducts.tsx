@@ -1,7 +1,4 @@
-import { useState } from "react";
 import ProductCard from "./ProductCard";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { allProducts, silverProducts, goldProducts } from "@/data/products";
 
 // Dynamically import all images from the assets/products folder
 const imageModules = import.meta.glob<{ default: string }>("../assets/products/*.{jpeg,jpg,png,webp}", {
@@ -36,33 +33,13 @@ Object.keys(imageModules).forEach((path, index) => {
   }
 });
 
-// Create filtered arrays by category
-const silverImages = imageProducts.filter(product => product.category === "Z Silver");
-const goldImages = imageProducts.filter(product => product.category === "Z Gold");
-const allImages = imageProducts;
-
 // Debug: Log available images
 if (import.meta.env.DEV) {
-  console.log("Total images found:", allImages.length);
-  console.log("Silver images:", silverImages.length);
-  console.log("Gold images:", goldImages.length);
+  console.log("Total images found:", imageProducts.length);
 }
 
 const FeaturedProducts = () => {
-  const [selectedCategory, setSelectedCategory] = useState<"all" | "Silver" | "Gold">("all");
-
-  const getDisplayProducts = () => {
-    switch (selectedCategory) {
-      case "Silver":
-        return silverImages;
-      case "Gold":
-        return goldImages;
-      default:
-        return allImages;
-    }
-  };
-
-  const displayProducts = getDisplayProducts();
+  const displayProducts = imageProducts;
 
   return (
     <section id="collections" className="py-32 bg-background relative">
@@ -78,22 +55,7 @@ const FeaturedProducts = () => {
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
             TZ COLLECTION
           </h2>
-          <div className="w-20 h-px bg-gold/50 mx-auto mb-8" />
-          
-          {/* Category Tabs */}
-          <Tabs value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as typeof selectedCategory)} className="w-full">
-            <TabsList className="bg-background/50 border border-gold/20">
-              <TabsTrigger value="all" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
-                TZ COLLECTION ({allImages.length})
-              </TabsTrigger>
-              <TabsTrigger value="Silver" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
-                Silver ({silverImages.length})
-              </TabsTrigger>
-              <TabsTrigger value="Gold" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
-                Gold ({goldImages.length})
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
+          <div className="w-20 h-px bg-gold/50 mx-auto" />
         </div>
 
         {/* Products Grid */}

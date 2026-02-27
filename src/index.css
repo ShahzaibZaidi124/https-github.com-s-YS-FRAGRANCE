@@ -116,6 +116,29 @@
     box-shadow: var(--shadow-gold);
   }
 
+  .media-frame {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    max-height: 1080px;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Video specific: show the whole video without cropping and limit resolution */
+  .media-frame-video {
+    width: 100%;
+    max-width: 1920px;
+    height: auto;
+    max-height: 1080px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    background: black;
+    aspect-ratio: 16 / 9;
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
