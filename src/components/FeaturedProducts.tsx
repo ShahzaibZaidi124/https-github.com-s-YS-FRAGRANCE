@@ -47,14 +47,7 @@ const FeaturedProducts = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,170,110,0.03),transparent_70%)]" />
       
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <p className="text-gold font-body text-sm tracking-[0.4em] uppercase mb-4">
-            Our Collection
-          </p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-            TZ COLLECTION
-          </h2>
+        <div className="text-center mb-12">
           <div className="w-20 h-px bg-gold/50 mx-auto" />
         </div>
 

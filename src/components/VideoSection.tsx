@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const VideoSection = () => {
   // keep track of which media item is loaded (video or photo)
@@ -31,7 +31,8 @@ const VideoSection = () => {
   const mediaList: MediaItem[] = Object.keys(mediaModules).map((path) => {
     const parts = path.split(/[/\\]/);
     const fileName = parts[parts.length - 1];
-    const url = (mediaModules[path as keyof typeof mediaModules] as any).default || "";
+    const mod = mediaModules[path];
+    const url = mod?.default || "";
     const ext = fileName.split(".").pop()?.toLowerCase();
     const type = ext === "mp4" ? "video" : "image";
     return { url, type, name: fileName };
@@ -46,16 +47,36 @@ const VideoSection = () => {
     mediaList.push({ url: "", type: "video", name: "(none)" });
   }
 
+  // ensure a photo is always shown by default (lifetime visibility)
+  useEffect(() => {
+    if (lastImageIndex === null) {
+      const currentVideo = mediaList[lastVideoIndex];
+      let idx: number | null = null;
+      if (currentVideo && currentVideo.type === "video") {
+        const assoc = findAssociatedImage(currentVideo);
+        if (assoc) {
+          idx = mediaList.findIndex((m) => m === assoc);
+        }
+      }
+      if (idx === null || idx === -1) {
+        const firstImageIdx = mediaList.findIndex((m) => m.type === "image");
+        if (firstImageIdx !== -1) {
+          setLastImageIndex(firstImageIdx);
+        }
+      } else {
+        setLastImageIndex(idx);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-            Experience Luxury
+          <h2 className="font-display text-4xl md:text-5xl text-gold mb-0">
+            OUR COLLECION COFFEE BLAST
           </h2>
-          <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto">
-            Discover the art of perfumery through our exclusive collection
-          </p>
         </div>
 
         {/* Media Tabs (videos/photos) */}
