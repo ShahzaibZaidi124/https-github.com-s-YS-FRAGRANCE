@@ -1,7 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Star } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Hero = () => {
+  const [rating, setRating] = useState(4);
+  const { toast } = useToast();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Decorative elements overlay */}
@@ -27,10 +32,25 @@ const Hero = () => {
             Our signature perfume collection is available now. Feel fresh. Feel confident.
           </p>
 
+          <div className="flex items-center justify-center gap-1 mb-8 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            {[0,1,2,3,4].map((i) => (
+              <Star
+                key={i}
+                className={`w-6 h-6 cursor-pointer ${i < rating ? "text-gold" : "text-muted-foreground"}`}
+                fill={i < rating ? "currentColor" : "none"}
+                onClick={() => {
+                  const newRating = i + 1;
+                  setRating(newRating);
+                  toast({ title: "Thanks for your rating", description: `${newRating} star${newRating > 1 ? "s" : ""}` });
+                }}
+              />
+            ))}
+          </div>
+
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-up" style={{ animationDelay: "0.6s" }}>
-            <Button variant="gold" size="lg">
-              Explore Collection
+            <Button asChild variant="gold" size="lg">
+              <a href="#collections">TZ COLLECTION</a>
             </Button>
           </div>
         </div>
