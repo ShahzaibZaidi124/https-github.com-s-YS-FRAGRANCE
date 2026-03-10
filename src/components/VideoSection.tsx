@@ -131,13 +131,27 @@ const VideoSection = () => {
           </div>
           {/* persistently show last selected image (clicked or associated) */}
           {lastImageIndex !== null && mediaList[lastImageIndex]?.type === "image" && (
-            <div className="mt-4 aspect-video bg-muted rounded-lg overflow-hidden shadow-2xl">
-                <img
-                  src={mediaList[lastImageIndex].url}
-                  alt={mediaList[lastImageIndex].name}
-                  className="media-frame"
-                />
-            </div>
+            <>
+              <div className="mt-4 aspect-video bg-muted rounded-lg overflow-hidden shadow-2xl">
+                  <img
+                    src={mediaList[lastImageIndex].url}
+                    alt={mediaList[lastImageIndex].name}
+                    className="media-frame"
+                  />
+              </div>
+              <div className="mt-4 px-6 py-5 rounded-lg border border-gold/30 bg-background/60 text-center">
+                <p className="font-display text-2xl text-gold">
+                  🌟 High-Quality Bottles in Multiple Sizes 🌟
+                </p>
+                <p className="font-body text-lg text-foreground mt-2">Available Now:</p>
+                <div className="mt-3 space-y-1 font-body text-base text-foreground">
+                  <p>🧴 10 ml – Mini Size</p>
+                  <p>🧴 35 ml – Compact Size</p>
+                  <p>🧴 50 ml – Standard Size</p>
+                  <p>🧴 100 ml – Regular Size</p>
+                </div>
+              </div>
+            </>
           )}
         </div>
       </div>

@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Main Title */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#C8AA6E] mb-8 animate-fade-up tracking-wider">
-            TZ COLLECTION
+            YS FRAGRANCE
           </h1>
           
           {/* Description */}
