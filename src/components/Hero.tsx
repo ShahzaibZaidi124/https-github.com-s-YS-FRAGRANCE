@@ -23,20 +23,20 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Title */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[#C8AA6E] mb-8 animate-fade-up tracking-wider">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-[#C8AA6E] mb-8 animate-fade-up tracking-wider break-words">
             YS FRAGRANCE
           </h1>
           
           {/* Description */}
-          <p className="text-muted-foreground font-body text-2xl md:text-3xl lg:text-4xl max-w-3xl mx-auto mb-12 animate-fade-up font-medium relative z-10">
+          <p className="text-muted-foreground font-body text-xl sm:text-2xl md:text-3xl lg:text-4xl max-w-3xl mx-auto mb-8 sm:mb-12 animate-fade-up font-medium relative z-10 px-4 sm:px-0">
             Our signature perfume collection is available now. Feel fresh. Feel confident.
           </p>
 
-          <div className="flex items-center justify-center gap-1 mb-8 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+          <div className="flex items-center justify-center gap-1 mb-6 sm:mb-8 animate-fade-up" style={{ animationDelay: "0.4s" }}>
             {[0,1,2,3,4].map((i) => (
               <Star
                 key={i}
-                className={`w-6 h-6 cursor-pointer ${i < rating ? "text-gold" : "text-muted-foreground"}`}
+                className={`w-5 h-5 sm:w-6 sm:h-6 cursor-pointer ${i < rating ? "text-gold" : "text-muted-foreground"}`}
                 fill={i < rating ? "currentColor" : "none"}
                 onClick={() => {
                   const newRating = i + 1;
@@ -48,9 +48,9 @@ const Hero = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-up" style={{ animationDelay: "0.6s" }}>
-            <Button asChild variant="gold" size="lg">
-              <a href="#collections">TZ COLLECTION</a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-up" style={{ animationDelay: "0.6s" }}>
+            <Button asChild variant="gold" size="lg" className="w-full sm:w-auto">
+              <a href="#collections">YS FRAGRANCE</a>
             </Button>
           </div>
         </div>

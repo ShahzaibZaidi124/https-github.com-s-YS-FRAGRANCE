@@ -144,23 +144,22 @@ const FeaturedProducts = () => {
   const displayProducts = getDisplayProducts();
 
   return (
-    <section id="collections" className="py-32 bg-background relative">
+    <section id="collections" className="py-16 sm:py-32 bg-background relative">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,170,110,0.03),transparent_70%)]" />
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-12">
-          <div className="w-20 h-px bg-gold/50 mx-auto mb-8" />
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center mb-8 sm:mb-12">
           {/* Category Tabs */}
           <Tabs value={selectedCategory} onValueChange={(value) => setSelectedCategory(value as typeof selectedCategory)} className="w-full">
-            <TabsList className="bg-background/50 border border-gold/20">
-              <TabsTrigger value="all" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
+            <TabsList className="bg-background/50 border border-gold/20 h-auto flex-wrap justify-center p-1">
+              <TabsTrigger value="all" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10 px-3 py-2 sm:px-6 text-xs sm:text-base">
                 All Products ({allProducts.length})
               </TabsTrigger>
-              <TabsTrigger value="Z Silver" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
+              <TabsTrigger value="Z Silver" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10 px-3 py-2 sm:px-6 text-xs sm:text-base">
                 Z Silver ({silverProducts.length})
               </TabsTrigger>
-              <TabsTrigger value="Z Gold" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10">
+              <TabsTrigger value="Z Gold" className="data-[state=active]:text-gold data-[state=active]:bg-gold/10 px-3 py-2 sm:px-6 text-xs sm:text-base">
                 Z Gold ({goldProducts.length})
               </TabsTrigger>
             </TabsList>
@@ -168,7 +167,7 @@ const FeaturedProducts = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {displayProducts.map((product, index) => (
             <ProductCard
               key={product.name}

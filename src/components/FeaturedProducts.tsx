@@ -47,9 +47,6 @@ const FeaturedProducts = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(200,170,110,0.03),transparent_70%)]" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-12">
-          <div className="w-20 h-px bg-gold/50 mx-auto" />
-        </div>
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">

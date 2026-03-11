@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="font-display text-2xl tracking-[0.3em] text-gold">
+          <a href="#" className="font-display text-xl sm:text-2xl tracking-[0.15em] sm:tracking-[0.3em] text-gold whitespace-nowrap">
             YS FRAGRANCE
           </a>
 

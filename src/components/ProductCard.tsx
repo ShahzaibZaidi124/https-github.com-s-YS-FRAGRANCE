@@ -44,8 +44,8 @@ const ProductCard = ({ name, category, image, delay, index }: ProductCardProps) 
 
       {/* Product Details Modal */}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <DialogContent className="max-w-4xl w-[95vw] sm:w-full mx-auto p-4 sm:p-6 overflow-y-auto max-h-[90vh]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {/* Product Image (modal) */}
             <div className="w-full aspect-video overflow-hidden rounded-lg">
               <img
@@ -70,9 +70,9 @@ const ProductCard = ({ name, category, image, delay, index }: ProductCardProps) 
             </div>
           </div>
           
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-3 sm:space-y-4 mt-4">
               {/* WhatsApp Contact */}
-              <div className="flex items-center justify-center gap-3 p-3 rounded-lg bg-gradient-to-r from-gold/10 to-gold/5 border border-gold/20">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 p-3 rounded-lg bg-gradient-to-r from-gold/10 to-gold/5 border border-gold/20">
                 <div className="relative">
                   <svg 
                     className="w-6 h-6 text-[#25D366]" 
@@ -84,16 +84,16 @@ const ProductCard = ({ name, category, image, delay, index }: ProductCardProps) 
                   </svg>
                   <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full"></div>
                 </div>
-                <div className="text-center">
+                <div className="text-center sm:text-left">
                   <a 
                     href={`https://wa.me/923461034768`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-current hover:text-gold transition-all duration-300 font-body text-lg font-bold glow-gold tracking-wide no-underline"
+                    className="text-current hover:text-gold transition-all duration-300 font-body text-base sm:text-lg font-bold glow-gold tracking-wide no-underline"
                   >
                     +92 346 1034768
                   </a>
-                  <p className="text-white/80 font-body text-sm mt-1">Minhal Zaidi</p>
+                  <p className="text-white/80 font-body text-xs sm:text-sm mt-1">Minhal Zaidi</p>
                 </div>
               </div>
             </div>

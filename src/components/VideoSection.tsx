@@ -71,16 +71,16 @@ const VideoSection = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="font-display text-4xl md:text-5xl text-gold mb-0">
-            OUR COLLECION COFFEE BLAST
+    <section className="py-8 sm:py-12 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-6 sm:mb-8">
+          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl text-gold mb-0 leading-tight">
+            🌟 OUR COLLECION COFFEE BLAST 🌟
           </h2>
         </div>
 
         {/* Media Tabs (videos/photos) */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
           {visibleMedia.map((item) => {
             const idx = mediaList.findIndex((m) => m === item);
             return (
@@ -101,7 +101,7 @@ const VideoSection = () => {
                     setLastImageIndex(idx);
                   }
                 }}
-                className={`px-6 py-2 rounded-lg font-body transition-all ${
+                className={`px-3 sm:px-6 py-2 rounded-lg font-body text-sm sm:text-base transition-all ${
                   selectedIndex === idx
                     ? "bg-gold text-black"
                     : "bg-gold/10 text-gold border border-gold/30 hover:bg-gold/20"
@@ -139,12 +139,12 @@ const VideoSection = () => {
                     className="media-frame"
                   />
               </div>
-              <div className="mt-4 px-6 py-5 rounded-lg border border-gold/30 bg-background/60 text-center">
-                <p className="font-display text-2xl text-gold">
+              <div className="mt-4 px-4 sm:px-6 py-4 sm:py-5 rounded-lg border border-gold/30 bg-background/60 text-center">
+                <p className="font-display text-xl sm:text-2xl text-gold">
                   🌟 High-Quality Bottles in Multiple Sizes 🌟
                 </p>
-                <p className="font-body text-lg text-foreground mt-2">Available Now:</p>
-                <div className="mt-3 space-y-1 font-body text-base text-foreground">
+                <p className="font-body text-base sm:text-lg text-foreground mt-2">Available Now:</p>
+                <div className="mt-3 space-y-1 font-body text-sm sm:text-base text-foreground">
                   <p>🧴 10 ml – Mini Size</p>
                   <p>🧴 35 ml – Compact Size</p>
                   <p>🧴 50 ml – Standard Size</p>
