@@ -1,4 +1,5 @@
 import React from 'react';
+import qrCode from '../assets/backgrounds/qr code.jpg';
 
 const Footer = () => {
   return (
@@ -27,7 +28,7 @@ const Footer = () => {
           <div className="flex flex-col items-center gap-4 p-4 rounded-xl border border-gold/20 bg-gold/5 backdrop-blur-sm shadow-gold group hover:border-gold/40 transition-all duration-300">
             <div className="w-40 h-40 bg-white p-2 rounded-lg overflow-hidden flex items-center justify-center">
               <img 
-                src="/src/assets/whatsapp-qr.png" 
+                src={qrCode} 
                 alt="WhatsApp Channel QR Code" 
                 className="w-full h-full object-contain"
                 onError={(e) => {
