@@ -50,7 +50,7 @@ const Hero = () => {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-up" style={{ animationDelay: "0.6s" }}>
             <Button asChild variant="gold" size="lg" className="w-full sm:w-auto">
-              <a href="#collections">YS FRAGRANCE</a>
+              <a href="#collections">TZ collection</a>
             </Button>
           </div>
         </div>
