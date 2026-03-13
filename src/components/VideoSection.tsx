@@ -144,7 +144,7 @@ const VideoSection = () => {
                   🌟 High-Quality Bottles in Multiple Sizes 🌟
                 </p>
                 <p className="font-body text-base sm:text-lg text-foreground mt-2">Available Now:</p>
-                <div className="mt-3 space-y-1 font-body text-sm sm:text-base text-foreground">
+                <div className="mt-3 space-y-1 font-sans text-lg sm:text-xl text-white font-bold tracking-tight drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
                   <p>🧴 10 ml – Mini Size</p>
                   <p>🧴 35 ml – Compact Size</p>
                   <p>🧴 50 ml – Standard Size</p>

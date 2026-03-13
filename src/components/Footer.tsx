@@ -65,11 +65,11 @@ const Footer = () => {
                 href="https://wa.me/923461034768"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground hover:text-gold transition-all duration-300 font-body text-2xl font-bold glow-gold tracking-wide no-underline block"
+                className="text-white hover:text-gold transition-all duration-300 text-3xl font-sans font-bold tracking-tight drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] no-underline block"
               >
                 +92 346 1034768
               </a>
-              <p className="text-white/60 font-body text-sm mt-1 uppercase tracking-widest">Minhal Zaidi</p>
+              <p className="text-white font-sans font-bold text-sm mt-1 tracking-tight drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Minhal Zaidi</p>
             </div>
           </div>
         </div>
