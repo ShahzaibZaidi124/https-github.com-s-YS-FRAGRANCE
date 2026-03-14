@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import VideoSection from "@/components/VideoSection";
@@ -6,6 +8,19 @@ import Footer from "@/components/Footer";
 import backgroundImage from "../assets/backgrounds/ChatGPT Image Jan 15, 2026, 01_02_08 AM.png";
 
 const Index = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace('#', ''));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [hash]);
+
   return (
     <>
       {/* Fixed Background */}

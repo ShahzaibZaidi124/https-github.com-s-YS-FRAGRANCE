@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import backgroundImage from "../assets/backgrounds/ChatGPT Image Jan 15, 2026, 01_02_08 AM.png";
 
 const Contact = () => {
@@ -81,6 +82,17 @@ const Contact = () => {
                         </div>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Collections Link */}
+                  <div className="text-center">
+                    <Link 
+                      to="/#collections" 
+                      className="inline-flex items-center gap-2 text-gold hover:text-white transition-all duration-300 font-display text-xl group"
+                    >
+                      View Our Collections
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 </div>
               </div>
