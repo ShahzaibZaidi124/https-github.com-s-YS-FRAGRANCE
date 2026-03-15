@@ -89,9 +89,17 @@ const ProductCard = ({ name, category, image, delay, index }: ProductCardProps) 
                     href={`https://wa.me/923461034768`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-current hover:text-gold transition-all duration-300 font-body text-base sm:text-lg font-bold glow-gold tracking-wide no-underline"
+                    className="text-current hover:text-gold transition-all duration-300 font-body text-base sm:text-lg font-bold glow-gold tracking-wide no-underline block"
                   >
                     +92 346 1034768
+                  </a>
+                  <a 
+                    href={`https://wa.me/923352672670`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-current hover:text-gold transition-all duration-300 font-body text-base sm:text-lg font-bold glow-gold tracking-wide no-underline block"
+                  >
+                    +92 335 2672670
                   </a>
                   <p className="text-white/80 font-body text-xs sm:text-sm mt-1">Minhal Zaidi</p>
                 </div>

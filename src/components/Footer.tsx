@@ -70,6 +70,14 @@ const Footer = () => {
               >
                 +92 346 1034768
               </a>
+              <a 
+                href="https://wa.me/923352672670"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gold transition-all duration-300 text-3xl font-sans font-bold tracking-tight drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] no-underline block mt-1"
+              >
+                +92 335 2672670
+              </a>
               <p className="text-white font-sans font-bold text-sm mt-1 tracking-tight drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">Minhal Zaidi</p>
             </div>
           </div>
