@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import UpdateBanner from "@/components/UpdateBanner";
 import VideoSection from "@/components/VideoSection";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import Footer from "@/components/Footer";
@@ -44,6 +45,7 @@ const Index = () => {
       <main className="relative z-10 min-h-screen">
         <Navbar />
         <Hero />
+        <UpdateBanner />
         <VideoSection />
         <FeaturedProducts />
         <Footer />

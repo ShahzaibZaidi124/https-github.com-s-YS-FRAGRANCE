@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 
-const FIVE_HOURS_MS = 5 * 60 * 60 * 1000;
+// TEST: 10 seconds (change back to 5 * 60 * 60 * 1000 for real 5-hour rotation)
+const FIVE_HOURS_MS = 10 * 1000;
 const FOLDER_ORDER = ["1", "2", "3", "4"];
+
+/** Which folder to show based on real time: changes every 5 hours, same for everyone. Works even after PC was closed. */
+function getFolderIndexFromTime(): number {
+  const fiveHourBlocks = Math.floor(Date.now() / FIVE_HOURS_MS);
+  return fiveHourBlocks % FOLDER_ORDER.length;
+}
 
 const VideoSection = () => {
   // dynamically import everything in the video_photo folder (videos + photos)
@@ -28,14 +35,14 @@ const VideoSection = () => {
     return { url, type, name: fileName, folder };
   });
 
-  // Rotate folder every 5 hours: 1 → 2 → 3 → 4 → 1 → ...
-  const [currentFolderIndex, setCurrentFolderIndex] = useState(0);
+  // Folder from real time (so it’s correct after PC was closed). Updates every 5 hours.
+  const [currentFolderIndex, setCurrentFolderIndex] = useState(() => getFolderIndexFromTime());
   const currentFolder = FOLDER_ORDER[currentFolderIndex];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentFolderIndex((prev) => (prev + 1) % FOLDER_ORDER.length);
-    }, FIVE_HOURS_MS);
+    const syncFromTime = () => setCurrentFolderIndex(getFolderIndexFromTime());
+    syncFromTime();
+    const interval = setInterval(syncFromTime, 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 

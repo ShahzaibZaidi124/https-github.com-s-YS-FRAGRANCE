@@ -60,6 +60,12 @@ const Navbar = () => {
               </Link>
             )}
             <Link
+              to="/update"
+              className="text-foreground/80 hover:text-gold transition-colors duration-300 font-body text-sm tracking-widest uppercase"
+            >
+              Update
+            </Link>
+            <Link
               to="/contact"
               className="text-foreground/80 hover:text-gold transition-colors duration-300 font-body text-sm tracking-widest uppercase"
             >
@@ -97,6 +103,13 @@ const Navbar = () => {
                   Collections
                 </Link>
               )}
+              <Link
+                to="/update"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-foreground hover:text-gold transition-colors font-body text-lg uppercase tracking-widest py-2 border-b border-gold/10"
+              >
+                Update
+              </Link>
               <Link
                 to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
