@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
 
-// TEST: 10 seconds (change back to 5 * 60 * 60 * 1000 for real 5-hour rotation)
-const FIVE_HOURS_MS = 10 * 1000;
-const FOLDER_ORDER = ["1", "2", "3", "4"];
-
-/** Which folder to show based on real time: changes every 5 hours, same for everyone. Works even after PC was closed. */
-function getFolderIndexFromTime(): number {
-  const fiveHourBlocks = Math.floor(Date.now() / FIVE_HOURS_MS);
-  return fiveHourBlocks % FOLDER_ORDER.length;
-}
+/**
+ * VideoSection - Displays all videos and images from video_photo folder
+ * Shows all media permanently (no folder rotation)
+ */
+const FIVE_HOURS_MS = 5 * 60 * 60 * 1000;
 
 const VideoSection = () => {
   // dynamically import everything in the video_photo folder (videos + photos)
@@ -21,42 +17,29 @@ const VideoSection = () => {
     url: string;
     type: "video" | "image";
     name: string;
-    folder: string;
   }
 
+  // Get all media from video_photo folder - show all permanently
   const mediaList: MediaItem[] = Object.keys(mediaModules).map((path) => {
     const parts = path.split(/[/\\]/);
     const fileName = parts[parts.length - 1];
-    const folder = parts[parts.length - 2] || "root";
     const mod = mediaModules[path];
     const url = mod?.default || "";
     const ext = fileName.split(".").pop()?.toLowerCase();
     const type = ext === "mp4" ? "video" : "image";
-    return { url, type, name: fileName, folder };
+    return { url, type, name: fileName };
   });
 
-  // Folder from real time (so it’s correct after PC was closed). Updates every 5 hours.
-  const [currentFolderIndex, setCurrentFolderIndex] = useState(() => getFolderIndexFromTime());
-  const currentFolder = FOLDER_ORDER[currentFolderIndex];
-
-  useEffect(() => {
-    const syncFromTime = () => setCurrentFolderIndex(getFolderIndexFromTime());
-    syncFromTime();
-    const interval = setInterval(syncFromTime, 60 * 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Show only media from the current folder (1, 2, 3, or 4) – no exclusions so all pictures show
-  const activeMediaList = mediaList.filter((m) => m.folder === currentFolder);
-  const videos = activeMediaList.filter((m) => m.type === "video");
-  const images = activeMediaList.filter((m) => m.type === "image");
+  // Separate videos and images
+  const videos = mediaList.filter((m) => m.type === "video");
+  const images = mediaList.filter((m) => m.type === "image");
 
   return (
     <section className="py-8 sm:py-12 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Media content grid */}
         <div className="max-w-5xl mx-auto space-y-8">
-          {/* Videos Grid - current folder only */}
+          {/* Videos Grid - show all videos */}
           {videos.length > 0 && (
             <div className={`grid gap-6 ${videos.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}>
               {videos.map((video) => (
@@ -77,7 +60,7 @@ const VideoSection = () => {
             </div>
           )}
 
-          {/* Images Grid */}
+          {/* Images Grid - show all images */}
           {images.length > 0 && (
             <div className={`grid gap-6 ${images.length > 1 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}>
               {images.map((image) => (
@@ -112,4 +95,3 @@ const VideoSection = () => {
 };
 
 export default VideoSection;
-
